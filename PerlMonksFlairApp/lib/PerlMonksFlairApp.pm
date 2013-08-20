@@ -72,12 +72,10 @@ get qr{/([\w -.]+)\.jpg}  => sub {
     return $im->jpeg;
 };
 
-
-#template for regex route match
-#get qr{/(\w+)\.jpg} => sub {
-#    my ($uname) = splat;
-#    return $uname;
-#};
+#####
+#  The Methods below are just used like playground to test image generation and scraping. 
+#  I'm probably going to keep them around till everyone is satisfied with what we have.
+#####
 
 #This is exists only to test scraping.
 get '/scrape' => sub {
