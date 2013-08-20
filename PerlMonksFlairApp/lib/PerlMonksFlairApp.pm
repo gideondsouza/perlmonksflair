@@ -11,7 +11,7 @@ our $VERSION = '0.1';
 get '/' => sub {
     template 'index';
 };
-get qr{/(\w+)\.jpg}  => sub {
+get qr{/([\w -.]+)\.jpg}  => sub {
     
     my ($req_username) = splat;
     my $xp = 0;#experience
