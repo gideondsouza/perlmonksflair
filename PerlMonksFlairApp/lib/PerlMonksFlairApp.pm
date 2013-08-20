@@ -19,7 +19,7 @@ get qr{/([\w -.]+)\.jpg}  => sub {
     my $lvl = "";#level
     my $agent = WWW::Mechanize->new();
 
-    $agent->get("http://www.perlmonks.org/?node=$req_username");
+    $agent->get("http://www.perlmonks.org/?node=$req_username&type=user");
 #    debug $agent->{content}; # bah dummy. You're always looking at a logged out version of the page from code!
     my $stream = HTML::TokeParser->new(\$agent->{content});
     my $username = "-none-";
