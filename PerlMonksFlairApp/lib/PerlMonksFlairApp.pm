@@ -65,7 +65,7 @@ get qr{/([\w -.]+)\.jpg}  => sub {
     my $black = $im->colorResolve(0,0,0);
     debug "color is: $black";
     $im->stringFT($black, join('/', setting('public'), '/Open_Sans/OpenSans-Bold.ttf'),10 , 0, 110,  40, $username);
-    $im->stringFT($black, join('/', setting('public'), '/Open_Sans/OpenSans-Bold.ttf'), 14, 0, 108,  60, "Level ".$1);
+    $im->stringFT($black, join('/', setting('public'), '/Open_Sans/OpenSans-Bold.ttf'), 14, 0, 108,  60, $lvl);
     $im->stringFT($white, join('/', setting('public'), '/Open_Sans/OpenSans-Bold.ttf'), 9 , 0, 110,  75, "Experience ".$xp);
     debug "Error opening image: $@" if $@;
     content_type 'image/jpeg';
