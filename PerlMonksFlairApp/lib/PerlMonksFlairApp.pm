@@ -4,16 +4,18 @@ use WWW::Mechanize;
 use HTML::TokeParser;
 use GD;
 
-#set logger => 'file';
+set logger => 'file';
+set log => info;
 
 our $VERSION = '0.1';
 
 get '/' => sub {
-    template 'index';
+    return template 'index';
 };
 get qr{/([\w -.]+)\.jpg}  => sub {
     
     my ($req_username) = splat;
+    info("User => $req_username");
     my $xp = 0;#experience
     my $wr = 0;#writeups
     my $lvl = "";#level
