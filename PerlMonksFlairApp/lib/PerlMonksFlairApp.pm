@@ -68,12 +68,16 @@ get qr{/([\w -.]+)\.jpg}  => sub {
     #debug "color is: $black";
 
     my $xp_color = $white;
+    if($xp =~ /none/)
+    {
+	    $xp = 0;
+    }
     if($xp >= 250 and $xp < 400)
     {
 	$xp_color = $black;
     }
     $im->stringFT($black, join('/', setting('public'), '/Open_Sans/OpenSans-Bold.ttf'),10 , 0, 110,  40, $username);
-    $im->stringFT($black, join('/', setting('public'), '/Open_Sans/OpenSans-Bold.ttf'), 14, 0, 108,  60, $lvl);
+    $im->stringFT($black, join('/', setting('public'), '/Open_Sans/OpenSans-Bold.ttf'), 9, 0, 110,  60, $lvl);
     $im->stringFT($xp_color, join('/', setting('public'), '/Open_Sans/OpenSans-Bold.ttf'), 9 , 0, 110,  75, "Experience ".$xp);
     #debug "Error opening image: $@" if $@;
     content_type 'image/jpeg';
