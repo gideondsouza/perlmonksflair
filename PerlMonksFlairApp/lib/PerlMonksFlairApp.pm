@@ -37,25 +37,25 @@ get qr{/([\w -.]+)\.jpg}  => sub {
 	if($stream->get_trimmed_text("/td") eq "Experience:") {
 	    $stream->get_tag('td');
 	    $xp = $stream->get_trimmed_text("/td");
-	    debug "Set xp";
+	    #debug "Set xp";
 	    $stream->get_tag("td");
 	}
 	if($stream->get_trimmed_text("/td") eq "Level:") {
 	    $stream->get_tag('td');
 	    $lvl = $stream->get_trimmed_text("/td");
-	    debug "set lvl";
+	    #debug "set lvl";
 	    $stream->get_tag("td");
 	}
 	if($stream->get_trimmed_text("/td") eq "Writeups:") {
 	    $stream->get_tag('td');
 	    $wr = $stream->get_trimmed_text("/td");
-	    debug "set witeups";
+	    #debug "set witeups";
 	    $stream->get_tag("td");
 	}
     }
     $lvl =~ m/(\d+)/;
     my $l = $1;#just moved to another variable for feeling's sake.
-    debug "$username => Xp: $xp\n $wr level = $lvl L =$l";
+    #debug "$username => Xp: $xp\n $wr level = $lvl L =$l";
 #    my $to_print = "$username\nLevel: $lvl\nExperience: $xp";
     my $im = undef;
     
@@ -65,7 +65,7 @@ get qr{/([\w -.]+)\.jpg}  => sub {
     $im->trueColor(1);
     my $white = $im->colorResolve(255,255,255);
     my $black = $im->colorResolve(0,0,0);
-    debug "color is: $black";
+    #debug "color is: $black";
 
     my $xp_color = $white;
     if($xp >= 250 and $xp < 400)
@@ -75,7 +75,7 @@ get qr{/([\w -.]+)\.jpg}  => sub {
     $im->stringFT($black, join('/', setting('public'), '/Open_Sans/OpenSans-Bold.ttf'),10 , 0, 110,  40, $username);
     $im->stringFT($black, join('/', setting('public'), '/Open_Sans/OpenSans-Bold.ttf'), 14, 0, 108,  60, $lvl);
     $im->stringFT($xp_color, join('/', setting('public'), '/Open_Sans/OpenSans-Bold.ttf'), 9 , 0, 110,  75, "Experience ".$xp);
-    debug "Error opening image: $@" if $@;
+    #debug "Error opening image: $@" if $@;
     content_type 'image/jpeg';
     return $im->jpeg;
 };
@@ -94,7 +94,7 @@ get '/scrape' => sub {
 
     $agent->get("http://www.perlmonks.org/?node=gideondsouza");
     
-    debug $agent->{content}; # bah dummy. You're always looking at a logged out version of the page from code!
+    ##debug $agent->{content}; # bah dummy. You're always looking at a logged out version of the page from code!
     my $stream = HTML::TokeParser->new(\$agent->{content});
     my $username = "-none-";
 
@@ -109,19 +109,20 @@ get '/scrape' => sub {
 	if($stream->get_trimmed_text("/td") eq "Experience:") {
 	    $stream->get_tag('td');
 	    $xp = $stream->get_trimmed_text("/td");
-	    debug "Set xp";
+#	    debug "Set xp";
+
 	    $stream->get_tag("td");
 	}
 	if($stream->get_trimmed_text("/td") eq "Level:") {
 	    $stream->get_tag('td');
 	    $lvl = $stream->get_trimmed_text("/td");
-	    debug "set lvl";
+#	    debug "set lvl";
 	    $stream->get_tag("td");
 	}
 	if($stream->get_trimmed_text("/td") eq "Writeups:") {
 	    $stream->get_tag('td');
 	    $wr = $stream->get_trimmed_text("/td");
-	    debug "set witeups";
+#	    debug "set witeups";
 	    $stream->get_tag("td");
 	}
     }
