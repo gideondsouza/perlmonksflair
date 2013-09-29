@@ -59,6 +59,7 @@ public/Open_Sans/OpenSans-Italic.ttf
 public/Open_Sans/OpenSans-Light.ttf
 public/Open_Sans/OpenSans-LightItalic.ttf
 public/Open_Sans/OpenSans-Regular.ttf
+README
 t/001_base.t
 t/002_index_route.t
 views/index.tt
