@@ -6,5 +6,7 @@ use warnings;
 use PerlMonksFlairApp;
 use Dancer::Test;
 
-route_exists [GET => '/'], 'a route handler is defined for /';
-response_status_is ['GET' => '/'], 200, 'response status is 200 for /';
+route_exists [GET => '/'], 'There is a home page';
+route_exists [GET => qr{/([\w -.]+)\.jpg}], "There is a route for valid usernames.jpg";
+
+response_status_is ['GET' => '/'], 200, 'Home page returns fine';
