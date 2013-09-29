@@ -85,3 +85,64 @@ get qr{/([\w -.]+)\.jpg}  => sub {
 };
 
 true;
+__END__ #END of module
+
+=head1 NAME
+ 
+PerlMonksFlairApp  - www.perlmonksflair.com : Share flair badges from perlmonks.org 
+ 
+=head1 CONCEPT
+ 
+This project is a simple tribute to L<www.perlmonks.org> . It generates a badge 
+according to the 30 fancy titles you get when you are a user on that site.
+
+=head1 INSTALL INSTRUCTIONS
+
+My username is C<gideondsouza>, as of today I happen to be a Pilgrim, Level 8. 
+Here is my flair: L<http://www.perlmonksflair.com/gideondsouza.jpg>
+
+Here is the site live  : L<www.perlmonksflair.com>
+ 
+Once you install this module, all you need to do is :
+
+    $ perl /path/to/module/bin/app.pl --port=1234
+    $ #now you have the site running at localhost:1234
+
+Open your browser and try C<http://localhost:1234/your_perlmonks_username.jpg> 
+and you should see an appropriate flair badge. This is an example of running 
+on the L<Dancer> standalone framework. You could of course run it on a number 
+of other servers including Apache and what not.
+
+I used the nifty L<Dancer> web framework, do checkout L<Dancer2> for an even
+niftier web framework. On the site live I 
+use L<Varnish|https://www.varnish-cache.org/> to cache images and L<Starman> 
+as my server. The front end is bootstrap if you still haven't seen the site :)
+The whole thing runs on a L<CentOS|http://www.centos.org/> box.
+
+=head1 AUTHOR
+ 
+Gideon Israel Dsouza, C<< <gideon at cpan.org> >>, L<http://www.gideondsouza.com>
+The artwork for this project was done by L<Jennifer Leigh Holt | http://jenniferleigh.ca/> 
+
+=head1 SUPPORT and BUGS
+ 
+Please file issues, comments, feedbacks and bugs into the github repository here:
+L<https://github.com/gideondsouza/perlmonksflair/issues/new>. 
+ 
+=head1 ACKNOWLEDGEMENTS
+ 
+The artwork for this project was done by L<Jennifer Leigh Holt | http://jenniferleigh.ca/>
+ 
+=head1 LICENSE AND COPYRIGHT
+ 
+Copyright 2013 Gideon Israel Dsouza.
+ 
+This project is open source here : L<https://github.com/gideondsouza/perlmonksflair>. 
+ 
+This program is free software; you can redistribute it and/or modify it
+under the terms of either: the GNU General Public License as published
+by the Free Software Foundation; or the Artistic License.
+ 
+See http://dev.perl.org/licenses/ for more information.
+ 
+=cut
