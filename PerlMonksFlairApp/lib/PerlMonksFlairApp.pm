@@ -110,7 +110,7 @@ Once you install this module, all you need to do is :
 
 Open your browser and try C<http://localhost:1234/your_perlmonks_username.jpg> 
 and you should see an appropriate flair badge. This is an example of running 
-on the L<Dancer> standalone framework. You could of course run it on a number 
+on the L<Dancer> standalone server. You could of course run it on a number 
 of other servers including Apache and what not.
 
 I used the nifty L<Dancer> web framework, do checkout L<Dancer2> for an even

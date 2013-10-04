@@ -11,7 +11,7 @@ WriteMakefile(
     NAME                => 'PerlMonksFlairApp',
     AUTHOR              => q{Gideon Israel Dsouza <gideon@cpan.org>},
     VERSION_FROM        => 'lib/PerlMonksFlairApp.pm',
-    ABSTRACT            => 'A neat way to share your achievments on perlmonks.org',
+    ABSTRACT            => 'A neat way to share your achievements on perlmonks.org',
     ($eumm_version >= 6.3001
       ? ('LICENSE'=> 'perl')
       : ()),
