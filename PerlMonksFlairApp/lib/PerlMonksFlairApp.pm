@@ -7,7 +7,7 @@ use GD;
 set logger => 'file';
 set log => info;
 
-our $VERSION = '0.1';
+our $VERSION = '0.2';
 
 get '/' => sub {
     return template 'index';
