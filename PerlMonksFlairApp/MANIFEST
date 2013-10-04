@@ -5,9 +5,8 @@ environments/production.yml
 lib/PerlMonksFlairApp.pm
 Makefile.PL
 MANIFEST
+Changes
 MANIFEST.SKIP
-MYMETA.json
-MYMETA.yml
 public/404.html
 public/500.html
 public/badges/1.jpg
